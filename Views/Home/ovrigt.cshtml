@@ -1,0 +1,26 @@
+﻿@model List<BasketForum.Models.Inlagg>
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<!--Sida för de olika inläggen inom området-->
+<div class="container mt-4">
+
+    <!-- Navigering -->
+    <div class="mb-3">
+        <span class="text-light">
+            <a asp-action="Index" asp-controller="Home" class="text-light text-decoration-none">BasketForum</a> >> Övrigt
+        </span>
+    </div>
+
+    <!-- Rubriker -->
+    <div class="inlagg-row bg-dark text-light fw-bold py-2 mb-2 rounded">
+        <div class="status">Status</div>
+        <div class="amnen">Ämnen</div>
+        <div class="svar">Svar/Visningar</div>
+        <div class="senast-svar">Senaste svar</div>
+    </div>
+
+    <!-- Partial View -->
+    @Html.Partial("_InlaggsLista", Model)
+
+</div>

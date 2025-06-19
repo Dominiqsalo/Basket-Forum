@@ -1,0 +1,52 @@
+﻿@model BasketForum.Models.UserProfileViewModel
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+    <!--Profilboxen som visas-->
+<div class="container">
+    <div class="profile">
+        <div class="image">
+            <img src="~/images/avatar-default.png" alt="Profilbild" style="width:100%; height:100%;" />
+        </div>
+        <div class="name">@Model.User.anvandarnamn</div>
+
+        <div class="stats mt-4">
+            <div class="box">
+                <div class="value">@Model.AntalInlagg</div>
+                <div class="parameter">Inlägg</div>
+            </div>
+            <div class="box">
+                <div class="value">@Model.AntalKommentarer</div>
+                <div class="parameter">Kommentarer</div>
+            </div>
+            <div class="box">
+                <div class="value">-</div>
+                <div class="parameter">Trådar</div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h3>Dina senaste kommentarer</h3>
+        @if (Model.Kommentarer != null && Model.Kommentarer.Count > 0)
+        {
+            <ul>
+                @foreach (var kommentar in Model.Kommentarer)
+                {
+                    <li style="margin-bottom: 15px;">
+                        <div style="background-color: var(--surface); padding: 15px; border-radius: 10px;">
+                            <strong>@kommentar.Skapad.ToString("yyyy-MM-dd HH:mm")</strong><br />
+                            <p>@kommentar.Text</p>
+                            @* Valfritt: visa tillhörande inlägg *@
+                            @* <small>Inlägg ID: @kommentar.InlaggId</small> *@
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>Du har inte skrivit några kommentarer ännu.</p>
+        }
+    </div>
+
+</div>

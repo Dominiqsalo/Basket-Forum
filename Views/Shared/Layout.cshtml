@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <title>BasketForum</title>
+    <!--hämta css fil samt bootstraplänk-->
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+
+    <!--jquery filer för visa mer knapp-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").slideToggle();
+            });
+        });
+    </script>
+    @section Scripts {
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.13/jquery.validate.unobtrusive.min.js"></script>
+    }
+
+    <!--hämta logotyp-->
+    <link rel="Icon" href="~/lib/Bilder/logo.png" type="image/x-icon" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<!--ändra bakgrundsfärgen-->
+<body style="background-color: #3f4756">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+
+    <!--javascript för hamburgar meny-->
+    <script src="~/js/site.js"></script>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                <img src="~/lib/Bilder/logo.png" width="40" height="40" class="me-2" alt="BasketForum" />
+                <strong>BasketForum</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")"
+                           asp-controller="Home" asp-action="Index">Hem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "subforum" ? "active" : "")"
+                           asp-controller="Home" asp-action="subforum">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "statistik" ? "active" : "")"
+                           asp-controller="Home" asp-action="statistik">Statistik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "senastmatch" ? "active" : "")"
+                           asp-controller="Home" asp-action="senastmatch">Match</a>
+                    </li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Profil" ? "active" : "")"
+                               asp-controller="Home" asp-action="Profil">Min Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "skapainlagg" ? "active" : "")"
+                               asp-controller="Inlagg" asp-action="skapainlagg">Skapa Inlägg</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-controller="Home" asp-action="SignOutUser">Logga ut</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Login" ? "active" : "")"
+                               asp-controller="Home" asp-action="Login">Logga in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Registrera" ? "active" : "")"
+                               asp-controller="Home" asp-action="Registrera">Registrera</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+        @RenderBody()
+
+    <!--footer-->
+    <div class="footerBar">
+        <div class="footerContent">
+            <!--bild i footer-->
+            <img src="~/lib/Bilder/nbalogo.png" width="125px" height="70px" />
+            <img src="~/lib/Bilder/eulogo.png" width="125px" height="70px" />
+            <h3>BasketForum</h3>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur
+                harum aperiam voluptatibus dolor ex excepturi? Doloremque ullam quia
+                odio, facilis nulla ipsam recusandae ad id optio magni laboriosam
+                libero. Temporibus.
+            </p>
+            <!--socialamedier i footer-->
+            <ul class="socials">
+                <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

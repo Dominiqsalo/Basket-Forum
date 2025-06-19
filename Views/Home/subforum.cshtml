@@ -1,0 +1,54 @@
+﻿@model List<BasketForum.Models.Inlagg>
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <!-- Navigering -->
+    <div class="mb-3">
+        <span class="text-light">
+            <a asp-action="Index" asp-controller="Home" class="text-light text-decoration-none">BasketForum - Forum</a> >> Subforum
+        </span>
+    </div>
+
+    <!-- Rubrikrad -->
+    <div class="inlagg-row bg-dark text-light fw-bold py-2 mb-2 rounded">
+        <div class="status">Status</div>
+        <div class="amnen">Ämnen</div>
+        <div class="svar">Svar/Visningar</div>
+        <div class="senast-svar">Senaste svar</div>
+    </div>
+
+    <!-- Loop genom inlägg -->
+    @foreach (var item in Model)
+    {
+        <div class="inlagg-row mb-3 rounded bg-light text-dark p-3 shadow-sm">
+            <div class="status"><i class="fa fa-film fa-lg"></i></div>
+
+            <div class="amnen">
+                <h5>
+                    <a asp-action="visakommentar" asp-controller="Home" class="text-decoration-none">
+                        @Html.DisplayFor(m => item.titel)
+                    </a>
+                </h5>
+                <div class="small">
+                    Ämne: <strong>@Html.DisplayFor(m => item.amne)</strong><br />
+                    <span>Skapad av <b><a href="#">Användare</a></b></span>
+                </div>
+                <p>@(item.innehall ?? "Inget innehåll")</p>
+                <small>Kategori: @(item.kategori ?? "Okänd")</small>
+
+            </div>
+
+            <div class="svar text-center">
+                2 svar<br />
+                125 visningar
+            </div>
+
+            <div class="senast-svar text-center">
+                22 september 2022<br />
+                Av <b><a href="#">Användare</a></b>
+            </div>
+        </div>
+    }
+</div>

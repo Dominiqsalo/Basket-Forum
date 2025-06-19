@@ -1,0 +1,213 @@
+﻿@model BasketForum.Models.StartSidaViewModel
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container">
+
+    <!-- Frågor om basket (Övrigt) -->
+    @{
+        var ovrigt = Model.SenasteInlagg.ContainsKey("Övrigt") ? Model.SenasteInlagg["Övrigt"] : null;
+        var ovrigtCount = Model.InlaggPerKategori.ContainsKey("Övrigt") ? Model.InlaggPerKategori["Övrigt"] : 0;
+
+    }
+    <div class="subforum">
+        <div class="subforum-title">
+            <h1>Frågor om basket</h1>
+        </div>
+        <div class="subforum-row">
+            <div class="subforum-icon subforum-column center">
+                <i class="fa fa-question-circle"></i>
+            </div>
+            <div class="subforum-description subforum-column">
+                @if (ovrigt != null)
+                {
+                    <h4>
+                        <a asp-action="visakommentar" asp-controller="Home">@ovrigt.titel</a>
+                    </h4>
+                    <p>@(ovrigt.innehall.Length > 150 ? ovrigt.innehall.Substring(0, 150) + "..." : ovrigt.innehall)</p>
+                }
+                else
+                {
+                    <p>Inga inlägg ännu.</p>
+                }
+                <a asp-action="ovrigt" asp-controller="Home">
+                    <button class="button">Läs mer</button>
+                </a>
+            </div>
+            <div class="subforum-stats subforum-column center">
+                <span>@ovrigtCount Inlägg</span>
+            </div>
+            <div class="subforum-info subforum-column">
+                @if (ovrigt != null)
+                {
+                    <text>
+                        <b><a>Senaste Inlägget</a></b> av <a href="#">@ovrigt.skapare</a><br />
+                        <small>@ovrigt.skapad.ToString("dd MMMM yyyy")</small>
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        <b>Senaste Inlägget</b><br />
+                        <small>Datum saknas</small>
+                    </text>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Match -->
+    @{
+        var match = Model.SenasteInlagg.ContainsKey("Match") ? Model.SenasteInlagg["Match"] : null;
+        var matchCount = Model.InlaggPerKategori.ContainsKey("Match") ? Model.InlaggPerKategori["Match"] : 0;
+    }
+    <div class="subforum">
+        <div class="subforum-title">
+            <h1>Senaste Matcher</h1>
+        </div>
+        <div class="subforum-row">
+            <div class="subforum-icon subforum-column center">
+                <i class="fa fa-basketball-ball"></i>
+            </div>
+            <div class="subforum-description subforum-column">
+                @if (match != null)
+                {
+                    <h4>
+                        <a asp-action="visakommentar" asp-controller="Home">@match.titel</a>
+                    </h4>
+                    <p>@(match.innehall.Length > 150 ? match.innehall.Substring(0, 150) + "..." : match.innehall)</p>
+                }
+                else
+                {
+                    <p>Inga inlägg ännu.</p>
+                }
+                <a asp-action="senastmatch" asp-controller="Home">
+                    <button class="button">Läs mer</button>
+                </a>
+            </div>
+            <div class="subforum-stats subforum-column center">
+                <span>@matchCount Inlägg</span>
+            </div>
+            <div class="subforum-info subforum-column">
+                @if (match != null)
+                {
+                    <text>
+                        <b><a>Senaste Inlägget</a></b> av <a href="#">@match.skapare</a><br />
+                        <small>@match.skapad.ToString("dd MMMM yyyy")</small>
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        <b>Senaste Inlägget</b><br />
+                        <small>Datum saknas</small>
+                    </text>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Highlight -->
+    @{
+        var highlight = Model.SenasteInlagg.ContainsKey("Highlight") ? Model.SenasteInlagg["Highlight"] : null;
+        var highlightCount = Model.InlaggPerKategori.ContainsKey("Highlight") ? Model.InlaggPerKategori["Highlight"] : 0;
+    }
+    <div class="subforum">
+        <div class="subforum-title">
+            <h1>Höjdpunkter</h1>
+        </div>
+        <div class="subforum-row">
+            <div class="subforum-icon subforum-column center">
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="subforum-description subforum-column">
+                @if (highlight != null)
+                {
+                    <h4>
+                        <a asp-action="visakommentar" asp-controller="Home">@highlight.titel</a>
+                    </h4>
+                    <p>@(highlight.innehall.Length > 150 ? highlight.innehall.Substring(0, 150) + "..." : highlight.innehall)</p>
+                }
+                else
+                {
+                    <p>Inga inlägg ännu.</p>
+                }
+                <a asp-action="highlights" asp-controller="Home">
+                    <button class="button">Läs mer</button>
+                </a>
+            </div>
+            <div class="subforum-stats subforum-column center">
+                <span>@highlightCount Inlägg</span>
+            </div>
+            <div class="subforum-info subforum-column">
+                @if (highlight != null)
+                {
+                    <text>
+                        <b><a>Senaste Inlägget</a></b> av <a href="#">@highlight.skapare</a><br />
+                        <small>@highlight.skapad.ToString("dd MMMM yyyy")</small>
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        <b>Senaste Inlägget</b><br />
+                        <small>Datum saknas</small>
+                    </text>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistik -->
+    @{
+        var statistik = Model.SenasteInlagg.ContainsKey("Statistik") ? Model.SenasteInlagg["Statistik"] : null;
+        var statistikCount = Model.InlaggPerKategori.ContainsKey("Statistik") ? Model.InlaggPerKategori["Statistik"] : 0;
+    }
+    <div class="subforum">
+        <div class="subforum-title">
+            <h1>Statistik</h1>
+        </div>
+        <div class="subforum-row">
+            <div class="subforum-icon subforum-column center">
+                <i class="fa fa-bar-chart"></i>
+            </div>
+            <div class="subforum-description subforum-column">
+                @if (statistik != null)
+                {
+                    <h4>
+                        <a asp-action="visakommentar" asp-controller="Home">@statistik.titel</a>
+                    </h4>
+                    <p>@(statistik.innehall.Length > 150 ? statistik.innehall.Substring(0, 150) + "..." : statistik.innehall)</p>
+                }
+                else
+                {
+                    <p>Inga inlägg ännu.</p>
+                }
+                <a asp-action="statistik" asp-controller="Home">
+                    <button class="button">Läs mer</button>
+                </a>
+            </div>
+            <div class="subforum-stats subforum-column center">
+                <span>@statistikCount Inlägg</span>
+            </div>
+            <div class="subforum-info subforum-column">
+                @if (statistik != null)
+                {
+                    <text>
+                        <b><a>Senaste Inlägget</a></b> av <a href="#">@statistik.skapare</a><br />
+                        <small>@statistik.skapad.ToString("dd MMMM yyyy")</small>
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        <b>Senaste Inlägget</b><br />
+                        <small>Datum saknas</small>
+                    </text>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

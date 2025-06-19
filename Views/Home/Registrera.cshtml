@@ -1,0 +1,35 @@
+﻿@model Users
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="user_card">
+        <div class="brand_logo_container">
+            <img src="~/lib/Bilder/logo.png" class="brand_logo" alt="Logo">
+        </div>
+
+        <div class="form_container">
+             <!--Ett formulär som används till registrering -->
+            <form asp-action ="skapauser" asp-controller="Home">
+            <!--pattern används för att låta användaren endast mata in bokstäver och nummer-->
+            <div class="form-element">
+                <label>Användarnamn</label>
+                <input asp-for="anvandarnamn" type="text"   pattern="[a-zA-Z0-9]+" required />
+            </div>
+            <!--Email type används för att säga till användaren om hen har inte matat in en email-->
+            <div class="form-element">
+                <label>Email</label>
+                <input asp-for="email" type="email"   required />
+            </div>
+            <div class="form-element">
+                <label>Lösenord</label>
+                <input asp-for="losenord" type="password" required />
+            </div>
+                <button type="submit" value="register">Registrera Konto</button>
+        <a asp-action="Login" asp-controller="Home">Logga In</a>
+        </form >
+        </div>
+    </div>
+</div>

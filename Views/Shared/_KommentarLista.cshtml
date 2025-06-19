@@ -1,0 +1,21 @@
+﻿@model List<BasketForum.Models.Kommentar>
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var kommentar in Model)
+    {
+        <div class="card mb-3 bg-light text-dark shadow-sm">
+            <div class="card-header d-flex justify-content-between">
+                <strong>@kommentar.Anvandarnamn</strong>
+                <small class="text-muted">@kommentar.Skapad.ToString("yyyy-MM-dd HH:mm")</small>
+            </div>
+            <div class="card-body">
+                <p>@kommentar.Text</p>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p class="text-light">Inga kommentarer ännu.</p>
+}

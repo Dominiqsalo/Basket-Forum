@@ -1,0 +1,42 @@
+﻿@model BasketForum.Models.Inlagg
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+
+}
+    <!--inlägg för skapa inlägg rutan-->
+<div class="container mt-4">
+    <h2 class="text-light mb-4">Skapa Inlägg</h2>
+
+    @* Valideringssammanfattning *@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <form asp-action="skapapost" asp-controller="Inlagg" method="post">
+        <div class="form-element mb-3">
+            <label for="titel">Titel</label>
+            <input asp-for="titel" class="form-control" />
+            @Html.ValidationMessageFor(model => model.titel, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-element mb-3">
+            <label for="amne">Ämne</label>
+            <input asp-for="amne" class="form-control" />
+            @Html.ValidationMessageFor(model => model.amne, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-element mb-3">
+            <label for="innehall">Inlägg</label>
+            <textarea asp-for="innehall" rows="5" class="form-control"></textarea>
+            @Html.ValidationMessageFor(model => model.innehall, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-element mb-4">
+            <label for="kategori">Kategori</label>
+            @Html.DropDownListFor(model => model.kategori,
+            new SelectList(new[] { "Statistik", "Match", "Highlight", "Övrigt" }),
+                        "Välj kategori", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.kategori, "", new { @class = "text-danger" })
+        </div>
+
+        <button type="submit" class="button">Posta Inlägg</button>
+    </form>
+</div>

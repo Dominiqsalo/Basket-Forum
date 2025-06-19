@@ -1,0 +1,57 @@
+﻿@model HamtaData
+@{
+	Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- logga in container -->
+<div class="container h-100">
+	<div class="d-flex justify-content-center h-100">
+		<div class="user_card">
+			<div class="d-flex justify-content-center">
+				<div class="brand_logo_container">
+                    <img src="~/lib/Bilder/logo.png" class="brand_logo">
+					
+					<h1>Logga In</h1>
+				</div>
+			</div>	
+			<div class="d-flex justify-content-center form_container">
+        <!--formulär för att logga in-->
+					
+				<form asp-action="Login" asp-controller="Home" asp-route-returnurl="@ViewData["ReturnUrl"]">
+					@ViewBag.ErrorMessage
+					<div class="input-group mb-3">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>					
+						</div>
+						@Html.EditorFor(model => model.anvandarnamn, new { htmlAttributes = new { placeholder = "Ditt användarnamn" } })
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>					
+						</div>
+						@Html.EditorFor(model => model.losenord, new { htmlAttributes = new { placeholder = "Ditt Lösenord" } })
+					</div>
+					<div class="d-flex justify-content-center mt-3 login_container">
+				<button type="submit" name="login" id="login"class="btn login_btn">Logga in</button> 
+			</div>
+
+                    </form>
+			</div>
+			
+			
+      <!--fråga om användaren har ett konto-->
+			<div class="mt-4">
+				<div class="d-flex justify-content-center links">
+					Har du inget konto? <a asp-action="Registrera" asp-controller="Home">Registrera dig</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+

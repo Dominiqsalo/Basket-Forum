@@ -1,0 +1,48 @@
+﻿@model List<BasketForum.Models.Kommentar>
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container mt-4">
+
+    <!-- Navigering -->
+    <div class="mb-3">
+        <span class="text-light">
+            <a href="/" class="text-decoration-none text-light">BasketForum</a> >>
+            <a href="#" class="text-decoration-none text-light">Subforum</a> >>
+            <a href="#" class="text-decoration-none text-light">Kommentarer</a>
+        </span>
+    </div>
+
+    <!-- Ursprungligt inlägg -->
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between">
+            <strong>Skapad av: Användare</strong>
+            <small class="text-muted">01/01 - 2022</small>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Kommentar på Inlägg</h5>
+            <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quisquam maiores vero accusantium molestiae autem...
+            </p>
+            <button class="button">Läs mer</button>
+        </div>
+    </div>
+
+    <!-- Ny kommentar-knapp -->
+    <div class="mb-3">
+        <button class="btn btn-outline-secondary" onclick="document.getElementById('comment-area').classList.toggle('d-none')">Kommentera</button>
+    </div>
+
+    <!-- Kommentar form -->
+    <div id="comment-area" class="comment-area d-none mb-5">
+        <textarea name="comment" class="form-control mb-2" placeholder="Skriv din kommentar här..." rows="4"></textarea>
+        <input type="submit" value="Skicka" class="button" />
+    </div>
+
+    <!-- Kommentarlista -->
+    <!-- Kommentarlista -->
+    <h4 class="section-title mb-3">Kommentarer</h4>
+    @Html.Partial("_KommentarLista", Model)
+
+</div>

@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BasketForum
+build_property.RootNamespace = BasketForum
+build_property.ProjectDir = C:\Users\domin\Desktop\projekt\basketforum\basketforum\BasketForum\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\domin\Desktop\projekt\basketforum\basketforum\BasketForum
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/highlights.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxoaWdobGlnaHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/ovrigt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxvdnJpZ3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9maWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/Registrera.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyZXJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/senastmatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzZW5hc3RtYXRjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/statistik.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzdGF0aXN0aWsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/subforum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzdWJmb3J1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Home/visakommentar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx2aXNha29tbWVudGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Inlagg/Inlagg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5sYWdnXElubGFnZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Inlagg/skapainlagg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5sYWdnXHNrYXBhaW5sYWdnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Shared/Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Shared/_InlaggsLista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JbmxhZ2dzTGlzdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Shared/_KommentarLista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Lb21tZW50YXJMaXN0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Shared/_Layoutlogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRsb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/domin/Desktop/projekt/basketforum/basketforum/BasketForum/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+    <title>Logga in</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    <script src="~/js/site.js"></script>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home"></>
+                <img src="~/lib/Bilder/logo.png"
+                     width="40px"
+                     height="40px"
+                     alt="Basketforum" />
+                BasketForum
+            </a>
+
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="SignOutUser" asp-controller="Home">Logga Ut</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="skapainlagg" asp-controller="Inlagg">Skapa Inlägg</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" asp-action="Login" asp-controller="Home">Logga In</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" asp-action="Registrera" asp-controller="Home">Skapa Konto</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated){
+                    <li class="nav-item">
+
+                        <a class="nav-link" asp-action="Profil" asp-controller="Home">Min Profil</a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+        @RenderBody()
+  
+    <div class="footerBar">
+        <div class="footerContent">
+            <img src="~/lib/Bilder/nbalogo.png" width="125px" height="70px" />
+            <img src="~/lib/Bilder/eulogo.png" width="125px" height="70px" />
+            <h3>BasketForum</h3>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur
+                harum aperiam voluptatibus dolor ex excepturi? Doloremque ullam quia
+                odio, facilis nulla ipsam recusandae ad id optio magni laboriosam
+                libero. Temporibus.
+            </p>
+            <ul class="socials">
+                <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

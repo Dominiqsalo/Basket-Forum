@@ -1,0 +1,38 @@
+﻿@model List<BasketForum.Models.Inlagg>
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <div class="inlagg-row mb-3 rounded bg-light text-dark p-3 shadow-sm">
+            <div class="status"><i class="fa fa-file-text-o fa-lg"></i></div>
+
+            <div class="amnen">
+                <h5>
+                    <a asp-action="visakommentar" asp-controller="Home" class="text-decoration-none">
+                        @item.titel
+                    </a>
+                </h5>
+                <div class="small">
+                    Ämne: <strong>@item.amne</strong><br />
+                    <span>Skapad av <b>@item.skapare</b></span>
+                </div>
+                <p class="mt-2">@item.innehall</p>
+            </div>
+
+            <div class="svar text-center">
+                0 svar<br />
+                0 visningar
+            </div>
+
+            <div class="senast-svar text-center">
+                @item.skapad.ToString("yyyy-MM-dd")<br />
+                Av <b>@item.skapare</b>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p class="text-light">Inga inlägg hittades.</p>
+}
